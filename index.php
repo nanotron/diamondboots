@@ -1,4 +1,7 @@
-<? 
+<?
+  /*   
+    Author: Ernest Millan
+  */
   include './includes/common.php';   
 ?>
 
