@@ -1,0 +1,151 @@
+<?php 
+  header("Content-type: text/css; charset: UTF-8"); 
+  include './includes/common.php';
+?>
+
+  body{font-family:"helvetica neue",hevetica,sans-serif;margin:0;padding:0;background:#111 url("./img/bg_light.png");background-attachment:fixed;}
+  .soft{color:#999;}
+  .normal{font-weight:normal;color:#222;}
+  .promo{display:block;padding:0.7em;text-align:center;font-weight:normal;background:#ccc;color:#333;text-shadow:1px 1px 1px rgba(255,255,255,0.7);}
+    .promo a, .promo a:visited, .highlight{color:#33e;}
+
+  #floaty_ad {position:fixed;z-index:200;left:0;bottom:0;width:100%;text-align:center;padding:0;margin:0;}
+  .adbanner{height:50px !important;}
+  .adbanner a img{display:block;margin:0 auto;}
+
+  .contact_button_container{text-align:center;width:100%;}
+  .contact_button{font-weight:bold;width:200px;display:inline-block;margin:0.5rem 0;background:rgba(255,255,255,0.6);border-radius:0.5rem;padding:1rem;text-shadow:none;}
+
+  footer{display:block;}
+  .pt_5{padding-top:0.5em;}
+  
+  nav{position:fixed;width:100%;z-index:9999;top:0;left:0;}
+  nav .buttons{height:54px;text-align:center;color:white;border-top:1px solid #765;border-bottom:1px solid #111;
+        background:#433 url("./img/bg_top_54.png");
+        background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255, 255, 255, 0.2)), color-stop(1, rgba(255, 255, 255, 0.1)), color-stop(1, rgba(0, 0, 0, 0)), to(rgba(0,0,0,0))), url("img/bg_top_54.png");
+        text-align:center;}
+    nav .buttons a{display:inline-block;text-shadow:1px 1px 2px rgba(0,0,0,0.5);
+          border:1px solid rgba(0,0,0,0.5);
+          text-decoration:none;background-color:#333;background:rgba(0,0,0,0.3);
+          width:58px;border-radius:0.5em;margin:0.4em 0;
+          padding:0.75em 0.5em;color:#fff;font-size:0.9em;font-weight:bold;}
+    nav .buttons a#crafting_nav{border-top-right-radius:0;border-bottom-right-radius:0;}
+    nav .buttons a#potions_nav,nav .buttons a#mobs_nav{border-radius:0;}
+    nav .buttons a#server_nav{border-top-left-radius:0;border-bottom-left-radius:0;}
+    nav .buttons a.selected{background-color:#666;background:rgba(255,255,255,0.2);border-color:rgba(255,255,255,0.1);box-shadow:1px 1px 3px rgba(0,0,0,0.2) inset;}
+    
+    nav header{height:18px;background: #111 url("./img/bg.gif");padding:0.2em;text-align:center;display:block;}
+    nav header h1{color:#decfcf;text-shadow:#000 1px 1px -1px;font-size:0.9em;padding:0;margin:0;}
+    
+  #sections_container{position:relative;z-index:9;top:80px;left:0;}
+  
+  section > ul{padding:0;margin:0;}
+    section > ul li{position:relative;list-style-type:none;margin:0;padding:7px;font-size:1.2em;line-height:34px;
+                  border-bottom:1px solid #aaa;border-top:1px solid #fff;font-weight:bold;color:#444;
+                  background:#eee;
+                  background:#eee -moz-linear-gradient(top, #eee, #ddd);
+                  background:#eee -webkit-gradient(linear, left top, left bottom, from(#eee), to(#ddd));
+                  text-shadow:rgba(255,255,255,0.8) 1px 1px 1px;}  
+      section > ul li.selected{
+        background:#e3e3e3;
+        /*background:#f3f3cf -moz-linear-gradient(top, #f9f0cf, #f9f0bf);
+        background:#f3f3cf -webkit-gradient(linear, left top, left bottom, from(#f9f0dd), to(#f9f0dd));*/
+      }                     
+    section > ul li h2{display:inline;font-size:1.0em;margin-left:5px;}              
+    section > ul li .data_value{color:#999;position:absolute;right:0.5em;top:0.4em;font-size:1em;}
+      section > ul li .data_value sub{font-size:0.5em;}
+    section > ul li .row_item_container{cursor:pointer;}
+
+    section > ul li .content{display:none;margin-top:0.5em;line-height:1.1em;border:1px solid #ccc;background:#fff;border-radius:5px;font-size:0.8em;padding:10px;-webkit-box-shadow:inset #ccc 1px 1px 4px;}
+      section > ul li .content a, section > ul li.info a {text-decoration:none;color:#00c;font-weight:bold;} 
+        section > ul li .content a:hover, section > ul li.info a:hover{cursor:pointer;}
+      section > ul li .content .more_info{display:block;margin:0 auto;text-align:center;font-size:1.1em;line-height:2.1em;
+        background:#eee;
+        background:#fff -moz-linear-gradient(top, #fff, #ddd);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ddd));
+        border:1px solid #ccc;border-radius:5px;text-decoration:none;text-shadow:rgba(255,255,255,0.8) 1px 1px 1px;color:#555;}
+      section > ul li.heading, section > ul li.info{border:0;border-top:1px solid rgba(255,255,255,0.2);background:rgba(0,0,0,0.4);font-size:0.9em;color:#aaa;text-shadow:none;padding-left:15px;}
+        section > ul li.info{background:rgba(250,250,250,0.7);color:#333;border-top:0;font-weight:normal;text-align:center;line-height:1.4em;padding:5px 15px;}
+
+      section > ul li .pos, section > ul li .neg{font-weight:bold;font-size:1.3em;}
+      section > ul li .pos{color:#0a0;}
+      section > ul li .neg{color:#a00;}
+      section .source, section .desc, .loader, section .line {margin-bottom:0.5em;}
+      section .desc{font-weight:normal;}
+        section .desc a, section .desc strong{font-weight:bold;}
+      section .footnote{font-weight:normal;font-size:0.8em;padding-bottom:0.5em;}
+      
+      .twitter_button{text-align:center;}
+  .footer,.sub_footer{display:block;font-size:0.9em;padding:10px;background:#ddd;text-align:center;color:#333;text-shadow:#eee 1px 1px 1px;}  
+    .footer .twitter_button{margin-top:10px;}
+  .sub_footer{background:#eee;text-shadow:#fff 1px 1px 1px;}
+  
+  /* Recipes */    
+  .craft{position:relative;padding:5px;background:#c6c6c6;border:2px solid #999;border-bottom-color:#454545;border-right-color:#454545;margin-bottom:0.5em;}
+  .craft a{text-decoration:none;border:0;display:block;}
+  .craft .recipe{width:132px;height:132px;}
+  .craft .recipe .box, .craft .result{position:relative;float:left;width:40px;height:40px;padding:0;background:#8b8b8b;border:2px solid #373737;border-bottom-color:#fff;border-right-color:#fff;}
+    .craft .recipe .box .icon{position:relative;top:4px;left:3px;}
+  .craft .arrow{position:absolute;left:145px;top:56px;width:44px;height:44px;}
+  .craft .result{position:absolute;left:200px;top:38px;float:none;width:64px;height:64px;}
+    .craft .result .icon,.smelt .result .icon{position:relative;top:15px;left:15px;}
+    .craft .result .amt{position:absolute;right:14px;bottom:12px;color:#fff;font-size:1.3em;text-shadow:2px 2px 0px #000;}
+    
+  /* Items and Terrain */
+  .icon{background: url("./img/items.png") no-repeat top left;width:32px;height:32px;display:inline-block;vertical-align:middle;}
+  .icon_others,#clear_button,.smelt .recipe .fire,.smelt .arrow,.craft .arrow{background:url("./img/others.png") no-repeat;}  
+  .smelt .recipe{width:44px;}
+  .smelt .recipe .fire{background-position:-411px 4px;background-color:transparent;border:0;}
+  .smelt .arrow{left:60px;top:55px;width:44px;height:44px;background-position:-364px 0px;}
+  .smelt .result{left:120px;}
+  .craft .arrow{background-position:-364px 0px;}
+  
+  /* Potions */
+  #potions_section ul li h2{font-size:0.9em;}
+  .potion_icon{background: url("./img/potions.png") no-repeat top left;width:32px;height:32px;display:inline-block;vertical-align:middle;}
+
+  /* Mob Icons */
+  .mob_icon{background: url("./img/mobs.png") no-repeat top left;width:32px;height:32px;display:inline-block;vertical-align:middle;}
+  
+
+  #filter_container{position:relative;padding:7px;
+    border-top:1px solid #777;
+    background:#111 url("./img/bg.gif");
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255, 255, 255, 0.2)), color-stop(0.5, rgba(255, 255, 255, 0.1)), color-stop(0.5, rgba(0, 0, 0, 0.1)), to(rgba(0,0,0,0))), url("img/bg.gif");
+  }
+  #filter_box{margin:0 auto;display:block;width:100%;font-size:1.2em;border:1px solid #000;border-radius:15px;}
+  #clear_button{display:none;position:absolute;background-position:-6px -37px;width:26px;height:26px;top:0.8em;right:0.8em;}
+  
+  <?php
+    foreach ($terrain as $item) {         
+      if($item["name"] != "") {
+        echo ".i_".$item["id"]."{background-position:".$item["bg_pos"].";}";
+      }
+    }
+  ?> 
+
+  @media screen and (min-width:700px) {
+    body{margin:0 20%;}
+    .section_main, footer{box-shadow:rgba(0,0,0,0.4) 5px 5px 5px;}
+      #server_section{border-left:1px solid rgba(0,0,0,0.5);border-right:1px solid rgba(0,0,0,0.5);}
+    #clear_button{visibility:hidden;}
+    #filter_box{-webkit-appearance: none;width:80%;}
+    nav .buttons a {width:90px;}
+  }
+
+  <?php if($floatyad_mode == true) { ?>
+    .sub_footer{padding-bottom:100px;}
+  <? } ?>
+
+  /* Only show the Server tab on weekends. */
+  <?php if ($disable_server_tab) { ?>
+    #server_nav {display:none;}
+    nav .buttons a {width:80px;}
+    nav .buttons a#mobs_nav {border-top-right-radius:0.5em;border-bottom-right-radius:0.5em;}
+  <? } ?>
+
+<?php 
+  if($prod_mode == true) {
+    ob_end_flush(); 
+  }
+?>

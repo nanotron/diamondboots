@@ -1,0 +1,3 @@
+AddHandler application/x-httpd-php .css
+AddHandler application/x-httpd-php .js
+
